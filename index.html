@@ -50,9 +50,17 @@ p {
 <label> Bio Data: </label> <br> 
 <textarea rows="4" cols="40" 
 placeholder="Write Here..."></textarea><br> 
-<input type="submit" value="Send Form"> 
+<button type="button" onclick="goToInterview()">
+Send Form
+</button>
 </form>
 <hr> 
+<script>
 
+function goToInterview() {
+    window.location.href = "interview.html";
+}
+
+</script>
 </body> 
 </html>
