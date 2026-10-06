@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>FAZBEAR INTERVIEW</title>
+
+<style>
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    margin: 40px auto;
+    padding: 30px;
+    border: 4px solid darkred;
+    background-color: #111111;
+    box-shadow: 0 0 20px red;
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    font-family: Times New Roman;
+    font-size: 42px;
+    border-bottom: 3px solid red;
+    padding-bottom: 15px;
+}
+
+h2 {
+    text-align: center;
+    color: #cccccc;
+}
+
+.warning {
+    text-align: center;
+    color: yellow;
+    border: 2px solid yellow;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.question {
+    margin-top: 25px;
+    padding: 15px;
+    border-left: 4px solid red;
+    background-color: #1b1b1b;
+}
+
+.question p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    display: block;
+    margin: 30px auto 10px auto;
+    padding: 15px 35px;
+    background-color: darkred;
+    color: white;
+    border: 2px solid red;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: red;
+}
+
+.footer {
+    text-align: center;
+    color: #777777;
+    margin-top: 25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>FAZBEAR INTERVIEW</h1>
+
+<h2>SECURITY GUARD — NIGHT SHIFT</h2>
+
+<div class="warning">
+
+WARNING: THIS INTERVIEW IS BEING RECORDED.<br>
+DO NOT ASK WHY.
+
+</div>
+
+<form onsubmit="submitInterview(event)">
+
+<div class="question">
+
+<p>1. You notice an animatronic has moved from its original position. What do you do?</p>
+
+<label>
+<input type="radio" name="q1" value="good" required>
+Check the cameras and monitor its location.
+</label>
+
+<label>
+<input type="radio" name="q1" value="bad">
+Walk directly toward it.
+</label>
+
+<label>
+<input type="radio" name="q1" value="bad">
+Ignore it and continue working.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>2. The office lights suddenly turn off. What is your first reaction?</p>
+
+<label>
+<input type="radio" name="q2" value="good" required>
+Stay calm and check the security systems.
+</label>
+
+<label>
+<input type="radio" name="q2" value="bad">
+Run around the building.
+</label>
+
+<label>
+<input type="radio" name="q2" value="bad">
+Start screaming.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>3. You hear footsteps outside the office.</p>
+
+<label>
+<input type="radio" name="q3" value="good" required>
+Check the cameras before doing anything.
+</label>
+
+<label>
+<input type="radio" name="q3" value="bad">
+Open the door immediately.
+</label>
+
+<label>
+<input type="radio" name="q3" value="bad">
+Leave the office.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>4. What is the most important rule for a Fazbear security guard?</p>
+
+<label>
+<input type="radio" name="q4" value="good" required>
+Stay alert and monitor the building.
+</label>
+
+<label>
+<input type="radio" name="q4" value="bad">
+Play games during the shift.
+</label>
+
+<label>
+<input type="radio" name="q4" value="bad">
+Ignore the cameras.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>5. Your shift begins at 12:00 AM. How long must you survive?</p>
+
+<label>
+<input type="radio" name="q5" value="good" required>
+Until 6:00 AM.
+</label>
+
+<label>
+<input type="radio" name="q5" value="bad">
+Until 1:00 AM.
+</label>
+
+<label>
+<input type="radio" name="q5" value="bad">
+Until the animatronics leave.
+</label>
+
+</div>
+
+
+<button type="submit">SUBMIT INTERVIEW</button>
+
+</form>
+
+<div class="footer">
+
+FAZBEAR ENTERTAINMENT LLC<br>
+"Where fantasy and fun come to life."
+
+</div>
+
+</div>
+
+
+<script>
+
+function submitInterview(event) {
+
+    event.preventDefault();
+
+    let score = 0;
+
+    let answers = document.querySelectorAll(
+        'input[type="radio"]:checked'
+    );
+
+    answers.forEach(function(answer) {
+
+        if (answer.value === "good") {
+            score++;
+        }
+
+    });
+
+    if (score >= 4) {
+
+        window.location.href = "selected.html";
+
+    } else {
+
+        window.location.href = "not-selected.html";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
